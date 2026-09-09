@@ -1,3 +1,4 @@
 # SBER-PP
 
-Test commit in story SCRUM-2 Задача 2
+Test commit in story SCRUM-7 тестовая Story
+
