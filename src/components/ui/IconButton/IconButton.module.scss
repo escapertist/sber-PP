@@ -1,0 +1,43 @@
+@use '../../../styles/mixins' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+
+  &:hover:not(.active) {
+    background: var(--color-surface-muted);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+.sm {
+  width: var(--icon-button-size-sm);
+  height: var(--icon-button-size-sm);
+}
+
+.md {
+  width: var(--icon-button-size-md);
+  height: var(--icon-button-size-md);
+}
+
+.bordered {
+  background: var(--color-surface);
+  border-color: var(--color-border-subtle);
+}
+
+.active {
+  background: var(--color-brand-100);
+}

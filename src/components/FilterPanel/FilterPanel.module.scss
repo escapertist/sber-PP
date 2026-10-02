@@ -1,0 +1,46 @@
+@use '../../styles/mixins' as *;
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-10);
+}
+
+.search {
+  flex: 1 1 240px;
+}
+
+.select {
+  flex-shrink: 0;
+
+  @include below('md') {
+    flex: 1 1 100%;
+    width: 100% !important;
+  }
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-8);
+  min-height: var(--control-height-md);
+}
+
+.chipsLabel {
+  @include text('caption');
+
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.summary {
+  @include text('caption');
+
+  color: var(--color-text-muted);
+}

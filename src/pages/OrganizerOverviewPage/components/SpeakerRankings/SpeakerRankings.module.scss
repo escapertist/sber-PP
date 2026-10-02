@@ -1,0 +1,70 @@
+@use '../../../../styles/mixins' as *;
+
+.period {
+  flex-shrink: 0;
+  width: 130px;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  @include text('body-sm');
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  padding: var(--space-8) 0;
+  line-height: var(--line-height-normal);
+}
+
+.rank {
+  @include text('caption');
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  background: var(--color-surface-muted);
+  border-radius: var(--radius-full);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-bold);
+}
+
+.rankLeader {
+  background: var(--color-warning-50);
+  color: var(--color-warning-700);
+}
+
+.name {
+  flex: 1;
+  min-width: 0;
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.score {
+  width: 42px;
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.delta {
+  @include text('caption');
+
+  width: 28px;
+  color: var(--color-text-muted);
+}
+
+.deltaUp {
+  color: var(--color-brand-600);
+}
+
+.deltaDown {
+  color: var(--color-danger-700);
+}

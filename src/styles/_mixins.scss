@@ -1,0 +1,84 @@
+// Shared SCSS mixins. Use in modules via: @use '../../styles/mixins' as *;
+@use 'sass:map';
+@use 'sass:list';
+
+// Text styles derived from the Figma layout.
+$text-styles: (
+  'display': (var(--font-size-4xl), var(--font-weight-bold), var(--line-height-tight)),
+  'heading': (var(--font-size-3xl), var(--font-weight-bold), var(--line-height-normal)),
+  'title': (var(--font-size-lg), var(--font-weight-semibold), var(--line-height-normal)),
+  'body-lg': (var(--font-size-lg), var(--font-weight-regular), var(--line-height-relaxed)),
+  'body': (var(--font-size-md), var(--font-weight-regular), var(--line-height-base)),
+  'body-sm': (var(--font-size-sm), var(--font-weight-regular), var(--line-height-base)),
+  'label': (var(--font-size-md), var(--font-weight-semibold), var(--line-height-normal)),
+  'label-sm': (var(--font-size-sm), var(--font-weight-semibold), var(--line-height-normal)),
+  'caption': (var(--font-size-xs), var(--font-weight-regular), var(--line-height-normal)),
+  'caption-sm': (var(--font-size-2xs), var(--font-weight-regular), var(--line-height-base)),
+);
+
+@mixin text($name) {
+  $style: map.get($text-styles, $name);
+
+  @if not $style {
+    @error 'Unknown text style "#{$name}".';
+  }
+
+  font-family: var(--font-family-base);
+  font-size: list.nth($style, 1);
+  font-weight: list.nth($style, 2);
+  line-height: list.nth($style, 3);
+}
+
+@mixin focus-ring {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-focus-ring);
+}
+
+// Bordered box shared by text inputs, selects and text areas.
+@mixin field-control {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+
+  &:focus-within {
+    @include focus-ring;
+
+    border-color: var(--color-brand-600);
+  }
+}
+
+// Uppercase column/label caption (table headers, detail labels).
+@mixin overline {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+  text-transform: uppercase;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+$breakpoints: (
+  'md': 768px,
+  'lg': 1024px,
+);
+
+// Applies styles below the given breakpoint (the Figma layout is desktop-first).
+@mixin below($name) {
+  @media (max-width: (map.get($breakpoints, $name) - 1px)) {
+    @content;
+  }
+}

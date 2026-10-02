@@ -1,0 +1,27 @@
+@use '../../../styles/mixins' as *;
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-12);
+  padding: var(--space-16);
+  border-radius: var(--radius-md);
+}
+
+.info {
+  background: var(--color-info-50);
+  color: var(--color-info-700);
+}
+
+.warning {
+  background: var(--color-warning-50);
+  color: var(--color-warning-700);
+}
+
+.text {
+  @include text('body-sm');
+
+  flex: 1 1 240px;
+  line-height: var(--line-height-normal);
+}

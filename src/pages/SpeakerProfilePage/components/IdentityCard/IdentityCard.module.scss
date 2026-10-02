@@ -1,0 +1,62 @@
+@use '../../../../styles/mixins' as *;
+
+.root {
+  gap: var(--space-20);
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: var(--space-18);
+}
+
+.personCopy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-width: 0;
+}
+
+.name {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-title-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+}
+
+.headline {
+  @include text('body');
+
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+}
+
+.statuses {
+  gap: var(--space-7);
+}
+
+.bio {
+  @include text('body');
+
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-12) var(--space-24);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fact {
+  @include text('body-sm');
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-7);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+}

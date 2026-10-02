@@ -1,0 +1,77 @@
+@use '../../../styles/mixins' as *;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: var(--space-10);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+.scroller {
+  overflow-x: auto;
+}
+
+// Fixed layout keeps the Figma column proportions; narrow screens scroll horizontally.
+.table {
+  width: 100%;
+  min-width: 860px;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.headerCell {
+  @include overline;
+
+  height: 38px;
+  padding: 0 var(--space-6);
+  background: var(--color-surface-muted);
+  color: var(--color-text-muted);
+  text-align: left;
+  white-space: nowrap;
+
+  &:first-child {
+    padding-left: var(--space-14);
+    border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+  }
+
+  &:last-child {
+    padding-right: var(--space-14);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  }
+}
+
+.cell {
+  @include text('body-sm');
+
+  height: var(--row-height);
+  padding: var(--space-12) var(--space-6);
+  border-bottom: 1px solid var(--color-border-subtle);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+  vertical-align: middle;
+
+  &:first-child {
+    padding-left: var(--space-14);
+  }
+
+  &:last-child {
+    padding-right: var(--space-14);
+  }
+}
+
+.highlighted .cell {
+  background: var(--color-brand-50);
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+  padding: var(--space-14);
+}

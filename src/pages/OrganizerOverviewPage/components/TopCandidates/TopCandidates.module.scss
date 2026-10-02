@@ -1,0 +1,46 @@
+@use '../../../../styles/mixins' as *;
+
+.list {
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  gap: var(--space-11);
+  padding: var(--space-10) 0;
+}
+
+.rank {
+  @include text('caption');
+
+  flex-shrink: 0;
+  width: 18px;
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-bold);
+}
+
+.rankPodium {
+  color: var(--color-brand-600);
+}
+
+.nps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 50px;
+  line-height: var(--line-height-normal);
+}
+
+.npsValue {
+  @include text('label-sm');
+
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.npsLabel {
+  @include text('caption-sm');
+
+  color: var(--color-text-muted);
+  line-height: var(--line-height-normal);
+}

@@ -1,0 +1,58 @@
+@use '../../styles/mixins' as *;
+
+.legend {
+  @include text('caption');
+
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--space-7);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.legendMarker {
+  width: var(--space-8);
+  height: var(--space-8);
+  background: var(--color-brand-600);
+  border-radius: var(--radius-full);
+}
+
+.chart {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+  gap: var(--space-9);
+  min-height: calc(var(--bar-max-height) + 40px);
+  margin: 0;
+  padding: var(--space-8) 0 var(--space-4);
+  list-style: none;
+}
+
+.column {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: var(--space-7);
+  min-width: 0;
+  height: 100%;
+}
+
+.bar {
+  height: calc(var(--bar-max-height) * var(--bar-fill, 0));
+  background: var(--color-brand-100);
+  border-radius: var(--radius-bar) var(--radius-bar) 0 0;
+}
+
+.barHighlighted {
+  background: var(--color-brand-600);
+}
+
+.label {
+  @include text('caption-sm');
+
+  color: var(--color-text-muted);
+  line-height: var(--line-height-normal);
+  text-align: center;
+}

@@ -1,0 +1,73 @@
+@use '../../../../styles/mixins' as *;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-34);
+  flex-shrink: 0;
+  width: var(--layout-aside-width);
+  padding: var(--space-48) var(--space-60) var(--space-52);
+  background: var(--color-surface-brand);
+  color: var(--color-text-inverse);
+
+  @include below('lg') {
+    width: 100%;
+    padding: var(--space-34) var(--space-22);
+  }
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+}
+
+.badge {
+  @include text('caption');
+
+  padding: var(--space-5) var(--space-9);
+  background: var(--color-brand-100);
+  border-radius: var(--radius-full);
+  color: var(--color-brand-700);
+  font-weight: var(--font-weight-semibold);
+}
+
+.headline {
+  @include text('display');
+
+  @include below('md') {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+.description {
+  @include text('body-lg');
+
+  max-width: var(--layout-copy-width);
+  color: var(--color-text-on-brand);
+}
+
+.benefits {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-22);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.proof {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+}
+
+.proofText {
+  @include text('body-sm');
+
+  color: var(--color-text-on-brand-muted);
+  line-height: var(--line-height-normal);
+}

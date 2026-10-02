@@ -1,0 +1,32 @@
+@use '../../../../styles/mixins' as *;
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  margin: var(--space-2) 0;
+  padding: 0;
+}
+
+.milestone {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  padding: var(--space-13);
+  background: var(--color-brand-50);
+  border-radius: var(--radius-md);
+}
+
+.milestoneTitle {
+  @include text('caption');
+
+  color: var(--color-brand-700);
+  font-weight: var(--font-weight-semibold);
+}
+
+.milestoneDescription {
+  @include text('caption-sm');
+
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+}

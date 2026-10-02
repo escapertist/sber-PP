@@ -1,0 +1,56 @@
+.tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+}
+
+.round {
+  border-radius: var(--radius-full);
+}
+
+/* Sizes */
+.sm {
+  width: var(--metric-icon-size);
+  height: var(--metric-icon-size);
+}
+
+.md {
+  width: var(--icon-tile-size);
+  height: var(--icon-tile-size);
+}
+
+.lg {
+  width: var(--badge-icon-size);
+  height: var(--badge-icon-size);
+}
+
+/* Tones */
+.brand {
+  background: var(--color-brand-100);
+}
+
+.brand-soft {
+  background: var(--color-brand-50);
+}
+
+.neutral {
+  background: var(--color-surface-muted);
+}
+
+.white {
+  background: var(--color-surface);
+}
+
+.info {
+  background: var(--color-info-50);
+}
+
+.accent {
+  background: var(--color-accent-50);
+}
+
+.warning {
+  background: var(--color-warning-50);
+}

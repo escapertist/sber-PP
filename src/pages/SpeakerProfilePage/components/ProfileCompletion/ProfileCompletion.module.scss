@@ -1,0 +1,42 @@
+@use '../../../../styles/mixins' as *;
+
+.root {
+  gap: var(--space-16);
+}
+
+.score {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-12);
+}
+
+.scoreValue {
+  color: var(--color-brand-700);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task {
+  @include text('body-sm');
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-9);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-normal);
+}
+
+.taskDone {
+  color: var(--color-text-secondary);
+}

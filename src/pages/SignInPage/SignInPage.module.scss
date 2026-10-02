@@ -1,0 +1,28 @@
+@use '../../styles/mixins' as *;
+
+.page {
+  display: flex;
+  min-height: 100vh;
+  background: var(--color-surface);
+
+  @include below('lg') {
+    flex-direction: column;
+  }
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  min-width: 0;
+  padding: var(--space-70) var(--space-60) var(--space-60);
+
+  @include below('md') {
+    padding: var(--space-34) var(--space-16);
+  }
+}
+
+.content {
+  width: 100%;
+  max-width: var(--layout-form-width);
+}

@@ -1,0 +1,39 @@
+@use '../../styles/mixins' as *;
+
+.root {
+  gap: var(--space-12);
+  height: 100%;
+  padding: var(--space-18);
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+.label {
+  @include text('label-sm');
+
+  min-width: 0;
+  color: var(--color-text-secondary);
+}
+
+.value {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-metric);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+  white-space: nowrap;
+}
+
+.change {
+  @include text('caption');
+
+  color: var(--color-text-secondary);
+}
+
+.positive {
+  color: var(--color-brand-700);
+}

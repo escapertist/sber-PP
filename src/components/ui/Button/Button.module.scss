@@ -1,0 +1,99 @@
+@use '../../../styles/mixins' as *;
+
+.button {
+  @include text('label');
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  padding: 0 var(--space-15);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+/* Sizes */
+.md {
+  height: var(--control-height-md);
+}
+
+.lg {
+  height: var(--control-height-lg);
+  gap: var(--space-10);
+}
+
+/* Variants */
+.primary {
+  background: var(--color-brand-600);
+  color: var(--color-text-inverse);
+
+  &:hover:not(:disabled) {
+    background: var(--color-brand-700);
+  }
+}
+
+.secondary {
+  background: var(--color-surface);
+  border-color: var(--color-border-strong);
+  color: var(--color-text-primary);
+
+  &:hover:not(:disabled) {
+    background: var(--color-surface-muted);
+  }
+}
+
+.ghost {
+  background: transparent;
+  color: var(--color-brand-700);
+
+  &:hover:not(:disabled) {
+    background: var(--color-brand-50);
+  }
+}
+
+.danger {
+  background: var(--color-surface);
+  border-color: var(--color-danger-700);
+  color: var(--color-danger-700);
+
+  &:hover:not(:disabled) {
+    background: var(--color-danger-50);
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--icon-size-sm);
+  height: var(--icon-size-sm);
+
+  .lg & {
+    width: var(--icon-size-lg);
+    height: var(--icon-size-lg);
+  }
+
+  > svg,
+  > img {
+    width: 100%;
+    height: 100%;
+  }
+}

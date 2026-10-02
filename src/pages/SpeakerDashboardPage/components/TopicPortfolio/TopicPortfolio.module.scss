@@ -1,0 +1,63 @@
+@use '../../../../styles/mixins' as *;
+
+.root {
+  gap: var(--space-16);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-11);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topic {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+}
+
+.rank {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--rank-size);
+  height: var(--rank-size);
+  background: var(--color-surface-muted);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+}
+
+.rankLeading {
+  background: var(--color-brand-100);
+  color: var(--color-brand-700);
+}
+
+.name {
+  @include text('body-sm');
+
+  flex-shrink: 0;
+  width: 115px;
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+}
+
+.meter {
+  flex: 1;
+}
+
+.count {
+  @include text('caption');
+
+  flex-shrink: 0;
+  width: 20px;
+  color: var(--color-text-secondary);
+  text-align: right;
+}

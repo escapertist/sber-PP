@@ -1,0 +1,28 @@
+@use '../../../styles/mixins' as *;
+
+.root {
+  gap: var(--space-10);
+  height: 100%;
+}
+
+.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+.value {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-metric-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+  white-space: nowrap;
+}
+
+.label {
+  @include text('body-sm');
+
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+}

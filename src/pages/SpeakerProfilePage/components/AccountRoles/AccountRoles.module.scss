@@ -1,0 +1,42 @@
+@use '../../../../styles/mixins' as *;
+
+.roles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-10);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.role {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-14);
+  background: var(--color-surface-muted);
+  border-radius: var(--radius-md);
+}
+
+.primary {
+  background: var(--color-brand-50);
+
+  .meta {
+    color: var(--color-brand-700);
+  }
+}
+
+.title {
+  @include text('label');
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  color: var(--color-text-primary);
+}
+
+.meta {
+  @include text('caption');
+
+  color: var(--color-text-secondary);
+}

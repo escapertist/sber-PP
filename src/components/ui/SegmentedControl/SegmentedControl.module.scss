@@ -1,0 +1,42 @@
+@use '../../../styles/mixins' as *;
+
+.root {
+  display: flex;
+  gap: var(--space-5);
+  width: 100%;
+  padding: var(--space-5);
+  background: var(--color-surface-muted);
+  border-radius: var(--radius-lg);
+}
+
+.segment {
+  @include text('label');
+
+  flex: 1 1 0;
+  min-width: 0;
+  height: var(--control-height-sm);
+  padding: 0 var(--space-12);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+
+  &:hover:not(.active) {
+    color: var(--color-text-primary);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+.active {
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+}

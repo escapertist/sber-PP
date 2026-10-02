@@ -1,0 +1,47 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-primary);
+}
+
+/* Padding */
+.padding-none {
+  padding: 0;
+}
+
+.padding-xs {
+  padding: var(--space-10);
+}
+
+.padding-sm {
+  padding: var(--space-16);
+}
+
+.padding-md {
+  padding: var(--space-20);
+}
+
+.padding-lg {
+  padding: var(--space-22);
+}
+
+/* Gap */
+.gap-none {
+  gap: 0;
+}
+
+.gap-sm {
+  gap: var(--space-8);
+}
+
+.gap-md {
+  gap: var(--space-14);
+}
+
+.gap-lg {
+  gap: var(--space-18);
+}

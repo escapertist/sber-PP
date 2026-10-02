@@ -1,0 +1,85 @@
+@use '../../../../styles/mixins' as *;
+
+.root,
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-22);
+  width: 100%;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.title {
+  @include text('heading');
+
+  color: var(--color-text-primary);
+}
+
+.description {
+  @include text('body');
+
+  color: var(--color-text-secondary);
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+}
+
+.link {
+  @include text('label-sm');
+
+  border-radius: var(--radius-xs);
+  color: var(--color-brand-700);
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+.roles {
+  min-width: 0;
+  margin: 0;
+  padding: var(--space-4) 0 0;
+  border: none;
+}
+
+.rolesPrompt {
+  @include text('label-sm');
+
+  // Floating takes <legend> out of the fieldset border slot so margins behave normally.
+  float: left;
+  width: 100%;
+  margin-bottom: var(--space-10);
+  padding: 0;
+  color: var(--color-text-primary);
+}
+
+.roleChoices {
+  clear: both;
+  display: flex;
+  gap: var(--space-10);
+
+  @include below('md') {
+    flex-direction: column;
+  }
+}
+
+.terms {
+  @include text('caption-sm');
+
+  color: var(--color-text-muted);
+  text-align: center;
+}

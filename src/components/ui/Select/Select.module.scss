@@ -1,0 +1,39 @@
+@use '../../../styles/mixins' as *;
+
+.select {
+  @include field-control;
+  @include text('body');
+
+  width: 100%;
+  background-image: url('../../../assets/icons/chevron-down-field.svg');
+  background-position: right var(--space-12) center;
+  background-repeat: no-repeat;
+  color: var(--color-text-primary);
+  line-height: var(--line-height-normal);
+  text-overflow: ellipsis;
+  appearance: none;
+  cursor: pointer;
+
+  &:focus {
+    @include focus-ring;
+
+    border-color: var(--color-brand-600);
+  }
+}
+
+.md {
+  height: var(--input-height);
+  padding: 0 calc(var(--space-12) * 2 + 14px) 0 var(--space-12);
+}
+
+.sm {
+  @include text('caption');
+
+  height: 28px;
+  padding: 0 calc(var(--space-10) + 18px) 0 var(--space-10);
+  border-color: var(--color-border-subtle);
+  border-radius: var(--radius-sm);
+  background-image: url('../../../assets/icons/chevron-down-xs.svg');
+  background-position: right var(--space-10) center;
+  color: var(--color-text-secondary);
+}

@@ -1,0 +1,38 @@
+@use '../../../../styles/mixins' as *;
+
+.root {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-14);
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--icon-tile-size);
+  height: var(--icon-tile-size);
+  background: var(--color-surface-on-brand);
+  border-radius: var(--radius-md);
+}
+
+.copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.title {
+  @include text('title');
+
+  color: var(--color-text-inverse);
+}
+
+.description {
+  @include text('body-sm');
+
+  color: var(--color-text-on-brand-strong);
+}

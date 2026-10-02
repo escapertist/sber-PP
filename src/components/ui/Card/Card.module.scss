@@ -1,0 +1,57 @@
+@use '../../../styles/mixins' as *;
+
+.card {
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+/* Variants */
+.outlined {
+  background: var(--color-surface);
+  border-color: var(--color-border-subtle);
+}
+
+.filled {
+  background: var(--color-surface-muted);
+}
+
+/* Padding */
+.padding-none {
+  padding: 0;
+}
+
+.padding-sm {
+  padding: var(--space-13);
+}
+
+.padding-md {
+  padding: var(--space-22);
+}
+
+.padding-lg {
+  padding: var(--space-34);
+}
+
+/* States */
+.interactive {
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--color-border-strong);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+.selected,
+.selected.interactive:hover {
+  background: var(--color-brand-50);
+  border-color: var(--color-brand-600);
+}

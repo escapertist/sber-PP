@@ -1,0 +1,156 @@
+// Design tokens — source: Figma "DevRel" / Sign in and registration (node 2007:25967)
+// and Speaker dashboard (node 2007:26062).
+// Exposed as CSS custom properties so they are available both in SCSS modules and at runtime.
+
+:root {
+  /* ---------- Colors: brand ---------- */
+  --color-brand-700: #0e6841; // dark brand surface, links, brand text
+  --color-brand-600: #168454; // primary action, checked controls, selected border
+  --color-brand-100: #ddf3e7; // badges, avatars
+  --color-brand-75: #e3f3ea; // alternate avatar fill
+  --color-brand-50: #f0f8f4; // selected card background
+
+  /* ---------- Colors: text ---------- */
+  --color-text-primary: #16221c;
+  --color-text-secondary: #5e6d65;
+  --color-text-muted: #8b9891;
+  --color-text-inverse: #ffffff;
+
+  /* Text on brand (dark green) surfaces */
+  --color-text-on-brand-strong: #d9eee3;
+  --color-text-on-brand: #c9e4d5;
+  --color-text-on-brand-muted: #b9dcc8;
+
+  /* ---------- Colors: surfaces ---------- */
+  --color-surface: #ffffff;
+  --color-surface-muted: #f6f8f7;
+  --color-surface-brand: var(--color-brand-700);
+  --color-surface-on-brand: rgba(255, 255, 255, 0.13);
+  --color-surface-track: #e8eeea; // meter and progress tracks
+
+  /* Tinted surfaces and their text colors */
+  --color-info-50: #eaf1fc;
+  --color-info-700: #3867b2;
+  --color-accent-50: #f0ebf8;
+  --color-accent-700: #7457a8;
+  --color-warning-50: #fff3d7;
+  --color-warning-700: #a56613;
+  --color-danger-50: #fde9e7;
+  --color-danger-700: #b63a3a;
+
+  /* ---------- Colors: borders ---------- */
+  --color-border-strong: #c6d3cb; // inputs, secondary buttons
+  --color-border-subtle: #dde5e0; // dividers, unselected cards
+
+  /* ---------- Colors: states ---------- */
+  --color-focus-ring: rgba(22, 132, 84, 0.24);
+  --color-danger: #c2412d;
+
+  /* ---------- Typography ---------- */
+  --font-family-base: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --font-size-3xs: 10px;
+  --font-size-2xs: 11px;
+  --font-size-xs: 12px;
+  --font-size-sm: 13px;
+  --font-size-md: 14px;
+  --font-size-md-plus: 15px;
+  --font-size-lg: 16px;
+  --font-size-xl: 17px;
+  --font-size-2xl: 18px;
+  --font-size-3xl: 30px;
+  --font-size-title-lg: 22px;
+  --font-size-metric-sm: 24px;
+  --font-size-4xl: 42px;
+  --font-size-metric: 26px;
+
+  --line-height-normal: normal;
+  --line-height-tight: 1.12;
+  --line-height-heading: 1.25;
+  --line-height-base: 1.45;
+  --line-height-relaxed: 1.55;
+
+  /* ---------- Spacing ---------- */
+  --space-1: 1px;
+  --space-2: 2px;
+  --space-3: 3px;
+  --space-4: 4px;
+  --space-5: 5px;
+  --space-6: 6px;
+  --space-7: 7px;
+  --space-8: 8px;
+  --space-9: 9px;
+  --space-10: 10px;
+  --space-11: 11px;
+  --space-12: 12px;
+  --space-13: 13px;
+  --space-14: 14px;
+  --space-15: 15px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-20: 20px;
+  --space-22: 22px;
+  --space-24: 24px;
+  --space-30: 30px;
+  --space-34: 34px;
+  --space-36: 36px;
+  --space-44: 44px;
+  --space-48: 48px;
+  --space-52: 52px;
+  --space-60: 60px;
+  --space-70: 70px;
+
+  /* ---------- Radii ---------- */
+  --radius-xs: 4px; // checkbox
+  --radius-bar: 5px; // chart bars
+  --radius-sm: 6px; // rank chips
+  --radius-md: 8px; // buttons, inputs, cards, icon tiles
+  --radius-lg: 12px; // segmented control container, dashboard panels
+  --radius-full: 999px; // pills, avatars
+
+  /* ---------- Shadows ---------- */
+  --shadow-sm: 0 8px 24px rgba(19, 41, 30, 0.06);
+
+  /* ---------- Sizes ---------- */
+  --control-height-xs: 34px;
+  --control-height-sm: 38px;
+  --control-height-md: 40px;
+  --control-height-lg: 44px;
+  --input-height: 42px;
+
+  --icon-size-sm: 15px;
+  --icon-size-md: 16px;
+  --icon-size-lg: 18px;
+
+  --avatar-size-sm: 34px;
+  --avatar-size-md: 36px;
+  --avatar-size-lg: 42px;
+  --avatar-size-xl: 46px;
+  --avatar-size-2xl: 72px;
+  --icon-tile-size: 38px;
+  --icon-button-size-sm: 30px;
+  --icon-button-size-md: 32px;
+  --textarea-min-height: 116px;
+  --brand-mark-size: 40px;
+  --brand-mark-size-sm: 36px;
+  --metric-icon-size: 32px;
+  --badge-icon-size: 44px;
+  --date-tile-size: 48px;
+  --rank-size: 24px;
+  --checkbox-size: 17px;
+
+  /* ---------- Layout ---------- */
+  --layout-aside-width: 610px;
+  --layout-form-width: 510px;
+  --layout-copy-width: 470px;
+  --layout-sidebar-width: 236px;
+  --layout-topbar-height: 72px;
+
+  /* ---------- Motion ---------- */
+  --transition-fast: 120ms ease;
+}

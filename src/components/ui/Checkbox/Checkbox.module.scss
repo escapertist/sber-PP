@@ -1,0 +1,58 @@
+@use '../../../styles/mixins' as *;
+
+.root {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  cursor: pointer;
+}
+
+.input {
+  @include visually-hidden;
+}
+
+.box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-xs);
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.check {
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.input:checked + .box {
+  background: var(--color-brand-600);
+  border-color: var(--color-brand-600);
+
+  .check {
+    opacity: 1;
+  }
+}
+
+.input:focus-visible + .box {
+  @include focus-ring;
+}
+
+.input:disabled + .box {
+  opacity: 0.5;
+}
+
+.label {
+  @include text('body-sm');
+
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+}

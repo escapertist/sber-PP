@@ -1,0 +1,11 @@
+@use '../../styles/mixins' as *;
+
+.strong {
+  color: var(--color-text-primary);
+}
+
+.footerText {
+  @include text('caption');
+
+  color: var(--color-text-secondary);
+}

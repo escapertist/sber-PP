@@ -1,0 +1,29 @@
+.root {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--avatar-size-sm);
+  height: var(--avatar-size-sm);
+  background: var(--color-brand-100);
+  border: 2px solid var(--color-brand-700);
+  border-radius: var(--radius-full);
+  color: var(--color-brand-700);
+  font-size: var(--font-size-3xs);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+
+  & + & {
+    margin-left: calc(var(--space-8) * -1);
+  }
+
+  &:nth-child(even) {
+    background: var(--color-brand-75);
+  }
+}

@@ -1,0 +1,54 @@
+@use '../../../styles/mixins' as *;
+
+// Value is rendered after the label for a valid <dl>, then visually swapped.
+.root {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  min-width: 0;
+  background: var(--color-surface-muted);
+}
+
+.md {
+  gap: var(--space-2);
+  padding: var(--space-10);
+  border-radius: var(--radius-sm);
+
+  .value {
+    font-size: var(--font-size-lg);
+  }
+}
+
+.lg {
+  gap: var(--space-3);
+  padding: var(--space-11);
+  border-radius: var(--radius-md);
+
+  .value {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+.highlighted {
+  background: var(--color-brand-50);
+
+  .value {
+    color: var(--color-brand-700);
+  }
+}
+
+.value {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+  white-space: nowrap;
+}
+
+.label {
+  @include text('caption-sm');
+
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+  white-space: nowrap;
+}

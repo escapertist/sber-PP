@@ -1,0 +1,32 @@
+@use '../../../../styles/mixins' as *;
+
+.fileName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.small {
+  @include text('caption');
+
+  color: var(--color-text-secondary);
+}
+
+.file {
+  @include text('caption');
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-7);
+  min-width: 0;
+  color: var(--color-text-secondary);
+}
+
+.fileMissing {
+  color: var(--color-warning-700);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-8);
+}

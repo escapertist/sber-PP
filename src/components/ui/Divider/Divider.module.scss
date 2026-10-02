@@ -1,0 +1,23 @@
+@use '../../../styles/mixins' as *;
+
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  width: 100%;
+}
+
+.line {
+  flex: 1 1 0;
+  height: 1px;
+  margin: 0;
+  border: none;
+  background: var(--color-border-subtle);
+}
+
+.label {
+  @include text('caption');
+
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+}

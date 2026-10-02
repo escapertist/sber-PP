@@ -1,0 +1,54 @@
+@use '../../../../styles/mixins' as *;
+
+.root {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-12);
+}
+
+.item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-10);
+  padding: var(--space-16);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+
+  &:hover:not(.selected) {
+    border-color: var(--color-border-strong);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+.selected {
+  background: var(--color-brand-50);
+  border-color: var(--color-brand-600);
+
+  .value {
+    color: var(--color-brand-700);
+  }
+}
+
+.value {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-title-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+}
+
+.label {
+  @include text('body-sm');
+
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+}

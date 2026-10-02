@@ -1,0 +1,48 @@
+.track {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: var(--radius-full);
+}
+
+.sm {
+  height: var(--space-6);
+}
+
+.md {
+  height: var(--space-7);
+}
+
+.tinted {
+  background: var(--color-surface-track);
+}
+
+.white {
+  background: var(--color-surface);
+}
+
+.fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+}
+
+.strong {
+  background: var(--color-brand-600);
+}
+
+.soft {
+  background: var(--color-brand-100);
+}
+
+.info {
+  background: var(--color-info-700);
+}
+
+.accent {
+  background: var(--color-accent-700);
+}
+
+.warning {
+  background: var(--color-warning-700);
+}

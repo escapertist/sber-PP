@@ -1,0 +1,24 @@
+@use '../../../../styles/mixins' as *;
+
+.name {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-5);
+  max-width: 100%;
+}
+
+.nps {
+  @include text('body');
+
+  color: var(--color-brand-700);
+  font-weight: var(--font-weight-bold);
+}
+
+.npsEmpty {
+  color: var(--color-text-muted);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-6);
+}

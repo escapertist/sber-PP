@@ -1,0 +1,35 @@
+@use '../../../styles/mixins' as *;
+
+.root {
+  display: grid;
+  grid-template-columns: var(--columns-template);
+  align-items: start;
+
+  @include below('lg') {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.stretch {
+  align-items: stretch;
+}
+
+.fixedHeight > * {
+  height: var(--columns-row-height);
+
+  @include below('lg') {
+    height: auto;
+  }
+}
+
+.gap-sm {
+  gap: var(--space-12);
+}
+
+.gap-md {
+  gap: var(--space-14);
+}
+
+.gap-lg {
+  gap: var(--space-18);
+}

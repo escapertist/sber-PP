@@ -1,0 +1,17 @@
+@use '../../../styles/mixins' as *;
+
+.textarea {
+  @include field-control;
+  @include text('body');
+
+  width: 100%;
+  min-height: var(--textarea-min-height);
+  padding: var(--space-13);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  resize: vertical;
+
+  &:focus {
+    outline: none;
+  }
+}

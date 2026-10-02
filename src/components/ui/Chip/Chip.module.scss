@@ -1,0 +1,32 @@
+@use '../../../styles/mixins' as *;
+
+.chip {
+  @include text('caption');
+
+  flex-shrink: 0;
+  padding: var(--space-6) var(--space-11);
+  background: var(--color-surface-muted);
+  border: 1px solid transparent;
+  border-radius: var(--radius-full);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+
+  &:hover:not(.selected) {
+    border-color: var(--color-border-strong);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+.selected {
+  background: var(--color-brand-100);
+  border-color: var(--color-brand-600);
+  color: var(--color-brand-700);
+  font-weight: var(--font-weight-semibold);
+}
